@@ -1,0 +1,6 @@
+<div class="d-flex flex-column justify-content-center align-items-center my-5">
+  <img [src]="user()?.image" class="rounded-circle object-fit-cover" style="width: 90px;height: 90px;" [alt]="user()?.name">
+  <h2 class="my-4">{{user()?.name}}</h2>
+  <p class="my-4">{{user()?.email}}</p>
+  <button (click)="logout()" class="btn btn-outline-danger">Logout</button>
+</div>

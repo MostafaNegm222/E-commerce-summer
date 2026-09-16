@@ -1,0 +1,16 @@
+<div class="mb-3">
+  <label for="filter" class="form-label">Category</label>
+  <select
+    class="form-select"
+    name="filter"
+    id="filter"
+    [ngModel]="productService.category()"
+    (ngModelChange)="productService.category.set($event);productService.page.set(1)"
+  >
+    <option selected value="">Select one</option>
+    <option value="clothes">Clothes</option>
+    <option value="sports">Sports</option>
+    <option value="electronics">Electronics</option>
+  </select>
+</div>
+

@@ -1,0 +1,89 @@
+<form id="productForm" (submit)="onSubmit($event)">
+
+  <div class="mb-3">
+    <label for="name" class="form-label">Name</label>
+    <input
+      type="text"
+      class="form-control"
+      id="name"
+      aria-describedby="helpId"
+      placeholder="Enter product name..."
+      [formField]="productForm.name"
+      [class.is-invalid]="showError(productForm.name())"
+    />
+    @if (showError(productForm.name())) {
+      <small class="text-danger">{{productForm.name().errors()[0]?.message}}</small>
+    }
+  </div>
+
+  <div class="mb-3">
+    <label for="price" class="form-label">Price</label>
+    <input
+      type="number"
+      class="form-control"
+      id="price"
+      aria-describedby="helpId"
+      placeholder="Enter product price..."
+      [formField]="productForm.price"
+      [class.is-invalid]="showError(productForm.price())"
+    />
+    @if (showError(productForm.price())) {
+      <small class="text-danger">{{productForm.price().errors()[0]?.message}}</small>
+    }
+  </div>
+
+  <div class="mb-3">
+    <label for="image" class="form-label">Image</label>
+    <input
+      type="text"
+      class="form-control"
+      id="image"
+      aria-describedby="helpId"
+      placeholder="Enter product image..."
+      [formField]="productForm.image"
+      [class.is-invalid]="showError(productForm.image())"
+    />
+    @if (showError(productForm.image())) {
+      <small class="text-danger">{{productForm.image().errors()[0]?.message}}</small>
+    }
+  </div>
+
+  <div class="mb-3">
+    <label for="category" class="form-label">Category</label>
+    <select
+      class="form-select"
+      [formField]="productForm.category"
+      id="category"
+      [class.is-invalid]="showError(productForm.category())"
+    >
+      <option selected value="">Select one</option>
+      <option value="clothes">Clothes</option>
+      <option value="sports">Sports</option>
+      <option value="electronics">Electronics</option>
+    </select>
+     @if (showError(productForm.category())) {
+      <small class="text-danger">{{productForm.category().errors()[0]?.message}}</small>
+    }
+  </div>
+
+  <div class="mb-3">
+    <label for="description" class="form-label">Description</label>
+    <textarea
+      class="form-control"
+      id="description"
+      aria-describedby="helpId"
+      placeholder="Enter product description..."
+      [formField]="productForm.description"
+      [class.is-invalid]="showError(productForm.description())"
+    ></textarea>
+    @if (showError(productForm.description())) {
+      <small class="text-danger">{{productForm.description().errors()[0]?.message}}</small>
+    }
+  </div>
+  @if (!product()) {
+      <button type="submit" class="btn btn-primary mt-3"
+      [disabled]="productForm().submitting() || productForm().invalid()">
+      {{productForm().submitting() ? 'Loading...' :'Add Product'}}
+    </button>
+  }
+</form>

@@ -1,0 +1,17 @@
+<div class="mb-3">
+  <label for="sort" class="form-label">Sort</label>
+  <select
+    class="form-select"
+    name="sort"
+    id="sort"
+    [ngModel]="productService.sort()"
+    (ngModelChange)="productService.sort.set($event);productService.page.set(1)"
+  >
+    <option selected value="">Select one</option>
+    <option value="name">Name A-Z</option>
+    <option value="-name">Name Z-A</option>
+    <option value="price">Price Low to High</option>
+    <option value="-price">Price High to Low</option>
+  </select>
+</div>
+

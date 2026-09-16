@@ -1,0 +1,23 @@
+<div class="d-flex flex-column justify-content-between h-100">
+  <div class="p-4 d-flex flex-column justify-content-between">
+  <h1 class="text-center text-primary my-5">Confirm OTP Page</h1>
+  <form (submit)="onSubmit($event)" class="w-100">
+  <div class="mb-3">
+    <label for="confirmOTP" class="form-label">Confirm OTP</label>
+    <input
+      type="text"
+      class="form-control"
+      id="confirmOTP"
+      placeholder="Enter your confirmOTP..."
+      [formField]="confirmOTPForm.confirmOTP"
+      [class.is-invalid]="showError(confirmOTPForm.confirmOTP())"
+    />
+    @if(showError(confirmOTPForm.confirmOTP())) {
+      <small class="text-danger">{{confirmOTPForm.confirmOTP().errors()[0]?.message}}</small>
+    }
+  </div>
+  <button class="btn btn-primary" type="submit" [disabled]="confirmOTPForm().invalid() || confirmOTPForm().submitting()">Confirm Email</button>
+</form>
+</div>
+</div>
+

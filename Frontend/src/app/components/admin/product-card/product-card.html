@@ -1,0 +1,23 @@
+<div class="card mb-3">
+  <div class="row g-0">
+    <div class="col-md-4">
+      <img [src]="product()?.image" style="height:250px;" class="img-fluid rounded-start object-fit-cover w-100" alt="...">
+    </div>
+    <div class="col-md-8 d-flex">
+      <div class="card-body d-flex flex-column justify-content-center">
+        <h5 class="card-title">{{product()?.name}}</h5>
+        <p class="card-text">{{product()?.description}}</p>
+        <div class="d-flex gap-3">
+          <p class="text-bg-success badge">{{product()?.price | currency}}</p>
+          <p class="text-bg-primary badge">{{product()?.category}}</p>
+        </div>
+        <p class="card-text"><small class="text-body-secondary">last updated :{{product()?.updatedAt | date:"short"}}</small></p>
+        <div class="d-flex just-content-center gap-3">
+            <button class="btn btn-secondary" style="font-size: 12px;">show product <i class="bi bi-eye"></i></button>
+            <button (click)="open(product()?._id)" class="btn btn-warning" style="font-size: 12px;">edit product <i class="bi bi-pencil"></i></button>
+            <button class="btn btn-danger" (click)="open1(product()?._id)" style="font-size: 12px;">delete product <i class="bi bi-trash"></i></button>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

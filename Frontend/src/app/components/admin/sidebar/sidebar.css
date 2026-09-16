@@ -1,0 +1,29 @@
+.nav-item {
+  transition: 0.5s;
+}
+
+.nav-item:hover {
+  background-color: rgb(24, 83, 146);
+}
+
+.sidebar-content {
+  height: 100vh;
+  padding: 2rem 0;
+  background-color: var(--bs-primary);
+  color: white;
+}
+
+.sidebar-content .nav-link {
+  color: white;
+  transition: 0.2s;
+}
+
+.sidebar-content .nav-link:hover,
+.sidebar-content .nav-link.active {
+  background-color: rgba(255, 255, 255, 0.15);
+}
+
+.sidebar-content i {
+  width: 20px;
+  text-align: center;
+}

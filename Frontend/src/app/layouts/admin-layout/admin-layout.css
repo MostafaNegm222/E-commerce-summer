@@ -1,0 +1,34 @@
+.admin-layout {
+  display: grid;
+  grid-template-columns: 25% 75%;
+}
+
+.sidebar {
+  position: fixed;
+  inset: 0 auto 0 0;
+  width: 25%;
+  z-index: 1000;
+}
+
+.main-content {
+  grid-column: 2;
+  min-width: 0;
+  padding: 0 3rem;
+}
+
+@media (max-width: 992px) {
+  .admin-layout {
+    display: block;
+  }
+
+  .sidebar {
+    width: 280px;
+    transform: translateX(-100%);
+    transition: transform 0.3s ease;
+  }
+
+  .main-content {
+    width: 100%;
+    padding: 0 1rem;
+  }
+}

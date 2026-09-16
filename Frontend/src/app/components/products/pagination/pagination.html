@@ -1,0 +1,6 @@
+<ngb-pagination
+[collectionSize]="total()"
+[page]="productService.page()"
+(pageChange)="productService.page.set($event)"
+[pageSize]="productService.limit()"
+ aria-label="Default pagination" />

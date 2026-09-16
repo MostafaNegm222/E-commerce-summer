@@ -1,0 +1,35 @@
+
+<h1 class="text-center text-primary my-5">Admin Dashboard</h1>
+<div class="row row-cols-1 row-cols-md-2 row-cols-xl-3 g-4">
+  @for (state of productsService.status.value()?.data; track state._id) {
+
+    <div class="col">
+      <app-state-card
+        class="d-block h-100"
+        [state]="state">
+      </app-state-card>
+    </div>
+
+  }
+
+</div>
+
+<h2 class="text-primary text-center my-5">
+  Top Products
+</h2>
+
+<div class="row g-4">
+
+  @for (state of productsService.status.value()?.data; track state._id) {
+
+    <div class="col-12">
+      <app-product-card
+        class="d-block"
+        [product]="state.mostExpProduct">
+      </app-product-card>
+    </div>
+
+  }
+
+</div>
+

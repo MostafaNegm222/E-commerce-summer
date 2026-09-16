@@ -1,0 +1,18 @@
+<app-page-section [title]="`${productServices.product.value()?.data?.name || 'Product'} Page`">
+
+  @if(productServices.product.error(); as error) {
+    <h2 class="text-danger text-center">{{error.message}}</h2>
+  }@else if (productServices.product.isLoading()) {
+    <div class="w-50 mx-auto">
+        <app-placeholder></app-placeholder>
+    </div>
+  } @else if (productServices.product.value(); as res ) {
+    @if (res.data ; as product) {
+      <div class="w-50 mx-auto">
+      <app-card [product]="product">
+        <button (click)="router.navigateByUrl('/products')" class="btn btn-primary">Back to Products</button>
+      </app-card>
+    </div>
+    }
+  }
+</app-page-section>

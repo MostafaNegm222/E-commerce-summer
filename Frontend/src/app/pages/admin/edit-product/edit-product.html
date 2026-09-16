@@ -1,0 +1,11 @@
+<div class="modal-header">
+			<h4 class="modal-title">Update Product</h4>
+			<button type="button" class="btn-close" aria-label="Close" (click)="activeModal.dismiss('Cross click')"></button>
+		</div>
+		<div class="modal-body">
+			<app-product-form [product]="productService.product.value()?.data" (productSubmit)="updateData($event)"></app-product-form>
+		</div>
+		<div class="modal-footer">
+      <button type="button" class="btn btn-outline-secondary" (click)="activeModal.close('Close click')">Close</button>
+			<button type="submit" form="productForm" class="btn btn-primary">update Product</button>
+		</div>

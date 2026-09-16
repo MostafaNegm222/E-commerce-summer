@@ -1,0 +1,9 @@
+<div class="card">
+  <div class="card-body">
+    <h5 class="card-title text-center mb-4 fw-light">Category : {{state()?._id}}</h5>
+    <p class="card-text" style="font-size: 14px;">products count : <strong>{{state()?.productsCount}}</strong></p>
+    <p class="card-text" style="font-size: 14px;">category minimum price : <strong>{{state()?.minPrice | currency}}</strong></p>
+    <p class="card-text" style="font-size: 14px;">category maximum price : <strong>{{state()?.maxPrice | currency}}</strong></p>
+    <p class="card-text" style="font-size: 14px;">category average price : <strong>{{(state()?.avgPrice).toFixed(2) | currency}}</strong></p>
+  </div> 
+</div>

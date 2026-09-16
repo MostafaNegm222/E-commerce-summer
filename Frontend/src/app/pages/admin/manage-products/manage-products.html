@@ -1,0 +1,33 @@
+<app-page-section title="Manage Products Page">
+
+  @if (productService.products.error(); as error) {
+    <h2 class="text-danger text-center">Can't fetch data</h2>
+    <h4 class="text-danger text-center">{{error.message}}</h4>
+  } @else if (productService.products.isLoading()) {
+    <div class="row row-cols-1 g-4">
+      @for (p of [1,2,3,4]; track index ; let index = $index) {
+        <div class="col">
+          <app-placeholder-card></app-placeholder-card>
+        </div>
+      }
+    </div>
+  } @else if (productService.products.value(); as res) {
+    <div class="d-flex justify-content-end my-4">
+      <button (click)="router.navigateByUrl('admin/products/new')" class="btn btn-primary">Add Product</button>
+    </div>
+    <div class="row row-cols-1  g-4">
+      @for (p of res.data; track p._id) {
+        <div class="col">
+          <app-product-card [product]="p">
+          </app-product-card>
+        </div>
+      } @empty {
+        <h2 class="w-100 text-center text-primary">No products to show</h2>
+      }
+    </div>
+  }
+</app-page-section>
+
+
+
+

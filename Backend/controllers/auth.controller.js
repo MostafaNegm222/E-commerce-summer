@@ -5,6 +5,7 @@ const {promisify} = require("util")
 const User = require("../models/user.model");
 const AppError = require("../utils/AppError");
 const catchAsync = require("../utils/catchAsync");
+const { customAlphabet } = require("nanoid");
 const sendEmail = require("../utils/sendEmail");
 const template = require("../utils/emailTemplate");
 
@@ -18,8 +19,7 @@ exports.signup = catchAsync(async (req,res,next) => {
     // hash password
     const hashPassword = await bcrypt.hash(password,+process.env.SALT_ROUNDS)
     // generate otp 
-    const { nanoid } = await import("nanoid");
-    const otp = nanoid.customAlphabet("0123456789",6)()
+    const otp = customAlphabet("0123456789",6)()
     const confirmOTP = await bcrypt.hash(otp,+process.env.SALT_ROUNDS)
     const OTPExpired = Date.now() + 10 * 60 * 1000 
     // save user in database 

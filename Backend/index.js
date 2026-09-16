@@ -8,6 +8,6 @@ connectDB()
 
 const port = process.env.PORT || 5000
 
-app.listen(port,() => {
-    console.log(chalk.bgBlue(`Server is running at port ${port}`));
-})
+// app.listen(port,() => {
+//     console.log(chalk.bgBlue(`Server is running at port ${port}`));
+// })

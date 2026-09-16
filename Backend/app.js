@@ -8,6 +8,7 @@ const authRouter = require("./routes/auth.route")
 const globalError = require("./middlewares/globalError")
 
 const app = express()
+app.set("query parser" , "extended")
 
 app.use(express.json())
 app.use(morgan("dev"))

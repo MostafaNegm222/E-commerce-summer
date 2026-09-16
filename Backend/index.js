@@ -1,10 +1,10 @@
-const chalk = require("chalk")
 const app = require("./app");
-const connectDB = require("./config/connectDB.JS");
+const connectDB = require("./config/connectDB");
 const {setServers} = require("dns/promises")
 connectDB()
 
 if (process.env.NODE_ENV !== "production") {
+    const chalk = require("chalk")
     setServers(["8.8.8.8","8.8.4.4"])
     const port = process.env.PORT || 5000
 

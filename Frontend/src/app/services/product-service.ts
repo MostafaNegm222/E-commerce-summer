@@ -7,7 +7,7 @@ import { ApiResponse } from '../models/api-response';
 @Service()
 export class ProductService {
   private _http = inject(HttpClient)
-  apiLink = `http://localhost:8000/products`
+  apiLink = `https://e-commerce-summer-8bo1.vercel.app/products`
   id = signal("")
   category = signal("")
   sort = signal("")

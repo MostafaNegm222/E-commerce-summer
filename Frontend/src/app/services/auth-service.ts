@@ -8,8 +8,8 @@ import { firstValueFrom } from 'rxjs';
 export class AuthService {
   private _http = inject(HttpClient)
 
-  apiLink = `https://e-commerce-summer-8bo1.vercel.app/auth`
-  userLink = `https://e-commerce-summer-8bo1.vercel.app/users`
+  apiLink = `https://e-commerce-summer-fzvj.vercel.app/auth`
+  userLink = `https://e-commerce-summer-fzvj.vercel.app/users`
   id = signal("")
   resetToken = signal('')
   currentUser = signal<IUser | null>(null)

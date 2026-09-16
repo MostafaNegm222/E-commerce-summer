@@ -16,12 +16,6 @@ app.use(cors({
     origin: 'http://localhost:4200'
 }))
 
-app.use((req, res, next) => {
-    if (req.url.startsWith('/index.js')) {
-        req.url = req.url.replace('/index.js', '') || '/';
-    }
-    next();
-});
 
 app.get("/",(req,res) => {
     res.status(200).json({

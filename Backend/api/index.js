@@ -1,5 +1,5 @@
-const app = require("./app");
-const connectDB = require("./config/connectDB");
+const app = require("../app");
+const connectDB = require("../config/connectDB");
 const {setServers} = require("dns/promises")
 connectDB()
 

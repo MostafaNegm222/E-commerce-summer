@@ -1,9 +1,9 @@
 import { Component, signal } from '@angular/core';
-import { RouterOutlet, ɵEmptyOutletComponent } from '@angular/router';
+import { RouterOutlet } from '@angular/router';
 import { NgxSonnerToaster } from 'ngx-sonner';
 
 @Component({
-  imports: [RouterOutlet, NgxSonnerToaster, ɵEmptyOutletComponent],
+  imports: [RouterOutlet, NgxSonnerToaster],
   selector: 'app-root',
   styleUrl: './app.css',
   templateUrl: './app.html',

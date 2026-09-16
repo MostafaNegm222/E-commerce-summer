@@ -1,9 +1,9 @@
 import { Component, HostListener, signal } from '@angular/core';
 import { Sidebar } from '../../components/admin/sidebar/sidebar';
-import { RouterLink, RouterLinkActive, RouterOutlet } from '@angular/router';
+import { RouterOutlet } from '@angular/router';
 
 @Component({
-  imports: [Sidebar,RouterOutlet,RouterLinkActive,RouterLink],
+  imports: [Sidebar,RouterOutlet],
   selector: 'app-admin-layout',
   styleUrl: './admin-layout.css',
   templateUrl: './admin-layout.html',

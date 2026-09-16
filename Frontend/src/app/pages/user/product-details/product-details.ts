@@ -4,10 +4,9 @@ import { ActivatedRoute, Router } from '@angular/router';
 import { ProductService } from '../../../services/product-service';
 import { Placeholder } from '../../../components/products/placeholder/placeholder';
 import { Card } from '../../../components/products/card/card';
-import { JsonPipe } from '@angular/common';
 
 @Component({
-  imports: [PageSection, Placeholder, Card , JsonPipe],
+  imports: [PageSection, Placeholder, Card ],
   selector: 'app-product-details',
   styleUrl: './product-details.css',
   templateUrl: './product-details.html',

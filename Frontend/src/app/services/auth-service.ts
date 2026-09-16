@@ -14,7 +14,6 @@ export class AuthService {
   resetToken = signal('')
   currentUser = signal<IUser | null>(null)
 
-  // users = httpResource<ApiResponse<IUser[]>>(() => `${this.userLink}`)
 
   async login (data:Pick<IUser , "email" | "password">) {
     return firstValueFrom(this._http.post(`${this.apiLink}/login`,data))

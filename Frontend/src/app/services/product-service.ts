@@ -15,9 +15,7 @@ export class ProductService {
   debounceSearch = debounced(this.search,500)
   page = signal(1)
   limit = signal(10)
-  // getAllProducts () {
-  //   return this._http.get<any>(this.apiLink)
-  // }
+
 
   products = httpResource<ProductResponse<IProduct[]>>(() => `${this.apiLink}?search=${this.debounceSearch.value()}&sort=${this.sort()}${this.category() ? `&category=${this.category()}` : ``}&page=${this.page()}&limit=${this.limit()}`)
   product = httpResource<ProductResponse<IProduct>>(() => `${this.apiLink}/${this.id()}`)

@@ -1,4 +1,79 @@
+<!-- Hero -->
+<section class="hero text-center text-lg-start bg-body-tertiary border-bottom">
+  <div class="container py-5">
+    <div class="row align-items-center g-5 py-lg-5">
+      <div class="col-lg-7">
+        <span class="badge text-bg-primary mb-3">Full-stack demo store</span>
+        <h1 class="display-5 fw-bold mb-3">Welcome to E-Commerce Store</h1>
+        <p class="lead text-secondary mb-4">
+          Browse the catalog, search and filter products, and manage your account,
+          powered by an Angular storefront and a live Express + MongoDB API.
+        </p>
+        <div class="d-flex flex-column flex-sm-row gap-2 justify-content-center justify-content-lg-start">
+          <a routerLink="/products" class="btn btn-primary btn-lg px-4">
+            <i class="bi bi-grid me-2"></i>Browse Products
+          </a>
+          <a routerLink="/about" class="btn btn-outline-secondary btn-lg px-4">About the Project</a>
+        </div>
+      </div>
+      <div class="col-lg-5 text-center">
+        <i class="bi bi-bag-check hero-icon text-primary"></i>
+      </div>
+    </div>
+  </div>
+</section>
 
-<app-page-section title="Home Page">
+<!-- What the app actually does -->
+<section class="container py-5">
+  <h2 class="h3 fw-bold text-center mb-4">What you can do here</h2>
+  <div class="row g-4 row-cols-1 row-cols-md-3">
+    <div class="col">
+      <div class="card h-100 shadow-sm border-0">
+        <div class="card-body text-center p-4">
+          <i class="bi bi-search fs-1 text-primary"></i>
+          <h3 class="h5 fw-bold mt-3">Explore the catalog</h3>
+          <p class="text-secondary mb-0">
+            Search, filter and sort products served live from the REST API, and open any
+            product for its full details.
+          </p>
+        </div>
+      </div>
+    </div>
+    <div class="col">
+      <div class="card h-100 shadow-sm border-0">
+        <div class="card-body text-center p-4">
+          <i class="bi bi-shield-lock fs-1 text-primary"></i>
+          <h3 class="h5 fw-bold mt-3">Secure accounts</h3>
+          <p class="text-secondary mb-0">
+            Sign up with email confirmation, log in with JWT authentication, reset a
+            forgotten password and manage your profile.
+          </p>
+        </div>
+      </div>
+    </div>
+    <div class="col">
+      <div class="card h-100 shadow-sm border-0">
+        <div class="card-body text-center p-4">
+          <i class="bi bi-speedometer2 fs-1 text-primary"></i>
+          <h3 class="h5 fw-bold mt-3">Admin dashboard</h3>
+          <p class="text-secondary mb-0">
+            Admins get a protected dashboard to add, edit and delete products and to
+            manage users.
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
 
-</app-page-section>
+<!-- Call to action -->
+<section class="container pb-5">
+  <div class="p-4 p-lg-5 text-center bg-primary rounded-3 text-white">
+    <h2 class="h4 fw-bold mb-3">Ready to look around?</h2>
+    <p class="mb-4">Create an account to unlock the catalog, or log in if you already have one.</p>
+    <div class="d-flex flex-column flex-sm-row gap-2 justify-content-center">
+      <a routerLink="/auth/signup" class="btn btn-light px-4 fw-semibold">Create an account</a>
+      <a routerLink="/auth/login" class="btn btn-outline-light px-4">Log in</a>
+    </div>
+  </div>
+</section>

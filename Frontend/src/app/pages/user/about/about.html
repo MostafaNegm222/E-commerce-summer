@@ -1,4 +1,81 @@
-<app-page-section title="About Page">
+<section class="container py-5">
+  <div class="row justify-content-center">
+    <div class="col-lg-9">
+      <h1 class="fw-bold mb-3">About this project</h1>
+      <p class="lead text-secondary">
+        E-Commerce Store is a full-stack demo storefront: an Angular single-page
+        application in front of a live Express + MongoDB REST API, deployed on Vercel.
+      </p>
+    </div>
+  </div>
 
+  <div class="row g-4 mt-2">
+    <div class="col-lg-7">
+      <h2 class="h4 fw-bold mb-3">Features</h2>
+      <ul class="list-group list-group-flush">
+        <li class="list-group-item d-flex gap-3">
+          <i class="bi bi-check-circle-fill text-primary"></i>
+          <span>Browse a live product catalog with search, category filters and sorting.</span>
+        </li>
+        <li class="list-group-item d-flex gap-3">
+          <i class="bi bi-check-circle-fill text-primary"></i>
+          <span>Product details pages with related products.</span>
+        </li>
+        <li class="list-group-item d-flex gap-3">
+          <i class="bi bi-check-circle-fill text-primary"></i>
+          <span>Full authentication flow: sign up, email confirmation, login, profile, and forgot/reset password.</span>
+        </li>
+        <li class="list-group-item d-flex gap-3">
+          <i class="bi bi-check-circle-fill text-primary"></i>
+          <span>Role-based admin area with a dashboard, product management (add, edit, delete) and user management.</span>
+        </li>
+        <li class="list-group-item d-flex gap-3">
+          <i class="bi bi-check-circle-fill text-primary"></i>
+          <span>Route guards protect the catalog and admin pages; toasts give feedback on user actions.</span>
+        </li>
+      </ul>
 
-</app-page-section>
+      <h2 class="h4 fw-bold mt-5 mb-3">Tech stack</h2>
+      <div class="row g-3 row-cols-1 row-cols-sm-2">
+        <div class="col">
+          <div class="card h-100 border-0 shadow-sm">
+            <div class="card-body">
+              <h3 class="h6 fw-bold"><i class="bi bi-window me-2 text-primary"></i>Frontend</h3>
+              <p class="text-secondary small mb-0">Angular (standalone components, signals), Bootstrap 5, bootstrap-icons, ngx-sonner.</p>
+            </div>
+          </div>
+        </div>
+        <div class="col">
+          <div class="card h-100 border-0 shadow-sm">
+            <div class="card-body">
+              <h3 class="h6 fw-bold"><i class="bi bi-server me-2 text-primary"></i>Backend</h3>
+              <p class="text-secondary small mb-0">Node.js, Express, MongoDB with Mongoose, JWT authentication, Nodemailer.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="col-lg-5">
+      <div class="card border-0 shadow-sm bg-body-tertiary">
+        <div class="card-body p-4">
+          <h2 class="h5 fw-bold mb-3"><i class="bi bi-diagram-3 me-2 text-primary"></i>How it fits together</h2>
+          <p class="text-secondary mb-3">
+            This Angular app talks to the API over HTTPS. The API handles products,
+            users, authentication tokens and confirmation emails.
+          </p>
+          <p class="text-secondary mb-4">
+            Want the technical details? The backend lives in its own repository, and
+            both deploy to Vercel.
+          </p>
+          <a href="https://github.com/MostafaNegm222/E-commerce-summer" target="_blank" rel="noopener" class="btn btn-outline-primary w-100 mb-2">
+            <i class="bi bi-github me-2"></i>Frontend source on GitHub
+          </a>
+          <a href="https://github.com/MostafaNegm222/E-commerce-summer/tree/main/Backend" target="_blank" rel="noopener" class="btn btn-outline-primary w-100">
+            <i class="bi bi-github me-2"></i>Backend source on GitHub
+          </a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>

@@ -1,14 +1,26 @@
 const mongoose = require("mongoose")
 const chalk = require("chalk")
 
-async function connectDB () {
+// Surface database outages to requests in 5 seconds instead of the
+// default 10 seconds of silent buffering.
+mongoose.set("bufferTimeoutMS", 5000)
+
+// Reuse one connection across serverless invocations on Vercel
+let cached = global.mongooseConnection
+
+async function connectDB() {
+    if (cached) return cached
     try {
-        const con = await mongoose.connect(process.env.PRODUCTION_DATABASE)
-        console.log(chalk.bgRed(`Database is connected successfully ✅ in ${con.connection.name}`));
+        cached = await mongoose.connect(process.env.PRODUCTION_DATABASE, {
+            serverSelectionTimeoutMS: 5000,
+        })
+        global.mongooseConnection = cached
+        console.log(chalk.bgRed(`Database is connected successfully ✅ in ${cached.connection.name}`));
+        return cached
     } catch (error) {
-        console.log(error);
+        cached = null
+        console.error("Database connection failed:", error.message)
     }
 }
-
 
 module.exports = connectDB
